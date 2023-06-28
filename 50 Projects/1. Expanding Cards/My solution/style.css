@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    padding: 6rem 12rem;
+    transition: padding 1s;
+}
+
+h2 {
+    font-size: 2.4rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem;
+    width: 7vw;
+    border-radius: 50px;
+    transition: width 0.7s ease-in;
+}
+
+.card img {
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card.active {
+    width: 100%;
+}
+
+.card.active img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.card.active h2 {
+    opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    main {
+        padding: 6rem 5vw;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    h2 {
+        left: 2rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: scroll;
+        padding: 0 3vw;
+    }
+
+    main {
+        height: auto;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        width: 100%;
+        height: 7vh;
+        transition: height 0.7s ease-in;
+        margin: 1rem 0;
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .card.active {
+        height: 30vh;
+    }
+}
