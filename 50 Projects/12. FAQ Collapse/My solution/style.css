@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: rgb(231, 231, 231);
+}
+
+.container {
+    margin: 10px 0;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: relative;
+    width: min(600px, 100%);
+    border: 2px solid rgb(122, 122, 122);
+    border-radius: 15px;
+    margin: 0 5px;
+    padding: 0 20px;
+    isolation: isolate;
+    overflow: hidden;
+    transition: background .3s ease-in;
+}
+
+.card h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: normal;
+    font-size: 1.1rem;
+}
+
+.card p.hide {
+    display: none;
+}
+
+.card i {
+    color: rgb(116, 116, 116);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.card i.hide {
+    display: none;
+}
+
+.card.open {
+    background-color: white;
+}
+
+.card.open::before,
+.card.open::after {
+    position: absolute;
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 7.5rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.card.open::before {
+    color: rgba(125, 157, 204, 0.5);
+    transform: scale(-1, 1);
+    top: -1.5rem;
+    left: -1.5rem;
+}
+
+.card.open::after {
+    color: rgb(161, 231, 161, .5);
+    left: 1.5rem;
+}

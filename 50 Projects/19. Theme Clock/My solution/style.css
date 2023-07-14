@@ -1,0 +1,136 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: black;
+    --secondary-color: whitesmoke;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color .5s ease-in;
+}
+
+body.dark {
+    --primary-color: rgb(206, 206, 206);
+    --secondary-color: rgb(59, 59, 59);
+}
+
+button {
+    position: absolute;
+    top: 2rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.container {
+    text-align: center;
+}
+
+.analog-clock {
+    position: relative;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.hand {
+    border-radius: 5px 5px 0 0;
+    border: 2.5px solid var(--primary-color);
+    position: absolute;
+    height: 50%;
+    left: calc(50% - 2px);
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+}
+
+.hand.hour {
+    top: 15%;
+    height: 35%;
+}
+
+.hand.minute {
+    top: 5%;
+    height: 45%;
+}
+
+.hand.second {
+    border-color: orange;
+}
+
+.hour, .minute, .second {
+    transition: transform .1s ease-out;
+}
+
+.dot,
+.dot::after {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+}
+
+.dot::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: orange;
+}
+
+.digital-clock > span {
+    display: block;
+}
+
+.digital-clock .time {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.digital-clock .date {
+    text-transform: uppercase;
+    color: rgb(156, 156, 156);
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.digital-clock .date .day {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 2px 0;
+    width: 16px;
+    vertical-align: middle;
+}
