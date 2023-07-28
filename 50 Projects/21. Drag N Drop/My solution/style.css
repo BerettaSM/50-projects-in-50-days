@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: cornflowerblue;
+}
+
+.dropzone {
+    background-color: white;
+    border: 5px solid black;
+    height: 150px;
+    position: relative;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.dropzone.hovered {
+    background-color: #333;
+    border: 5px dashed white;
+}
+
+.dropzone.fade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+}
+
+.dropzone.hovered.fade::after {
+    background-color: #333;
+}
+
+.image {
+    background: url(../images/pic.jpg) center/cover no-repeat;
+    height: 100%;
+    width: 100%;
+}

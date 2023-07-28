@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --main-color:  rgb(51, 72, 136);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--main-color);
+}
+
+.generator {    
+    color: white;
+    background-color: hsl(0deg 0% 0% / 0.3);
+    border-radius: 6px;
+    box-shadow: 
+        3px 3px 4px hsl(0 0% 100% / 0.1),
+        -3px -3px 4px hsl(0 0% 100% / 0.1);
+    padding: 16px;
+    width: min(300px, 100%);
+}
+
+.generator > * {
+    width: 100%;
+}
+
+.generator h1 {
+    margin: 24px 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.generator .display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(0deg 0% 0% / 0.3);
+    border-radius: 6px;
+    padding: 5px;
+    height: 40px;
+}
+
+.generator .display span {
+    display: inline-block;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.generator .display .clipboard {
+    height: 30px;
+    width: 30px;
+    flex-shrink: 0;
+}
+
+.generator button {
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 6px;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 8px 0;
+    transition: filter .3s ease;
+}
+
+.generator button:hover,
+.generator button:active {
+    filter: brightness(.9);
+}
+
+.generator .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+
+.control input[type="number"] {
+    width: 3rem;
+}

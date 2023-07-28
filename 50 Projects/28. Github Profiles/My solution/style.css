@@ -1,0 +1,97 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+:root {
+    --background: hsl(244, 60%, 26%);
+    --card-background: hsl(260, 60%, 30%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+input {
+    background-color: var(--card-background);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    max-width: min(100%, 44rem);
+    padding: 8px 16px;
+    width: 100%;
+}
+
+input:focus {
+    outline: 2px solid white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    max-width: min(100%, 50rem);
+}
+
+.card .content {
+    color: white;
+    padding: 32px;
+    display: flex;
+    gap: 32px;
+}
+
+.user-pic {
+    max-width: 10rem;
+    max-height: 10rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 10px solid var(--background);
+}
+
+.user-pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info h1 {
+    margin-top: 0;
+}
+
+.info .stats {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+}
+
+.info .stats > span {
+    margin-right: 32px;
+}
+
+.info .repos .repo {
+    background-color: var(--background);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 3px;
+    margin: 6px 3px;
+}
