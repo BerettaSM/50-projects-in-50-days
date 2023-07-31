@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    background: url('https://images.unsplash.com/photo-1556745757-8d76bdb6984b') no-repeat center center/cover;
+    position: absolute;
+    inset: -20px;
+    filter: blur(20px);
+    transition: filter 1s ease;
+}
